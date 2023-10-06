@@ -5,8 +5,11 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.dn {
-  display: none;
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .nav {
@@ -15,19 +18,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-}
-.nav .imgdiv img {
-  max-width: 100%;
-  height: auto;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
 .maincontent {
-  height: 769px;
+  max-height: 100%;
+  padding: 40px 0px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+.maincontent .subject {
+  padding-top: 10px;
 }
 .maincontent div {
   margin-top: 10px;
@@ -35,9 +37,6 @@
 .maincontent select {
   width: 80px;
   height: 30px;
-}
-.maincontent .gradeandcredit div :last-child {
-  margin-left: 15px;
 }
 .maincontent input {
   width: 400px;
@@ -48,18 +47,31 @@
   border: 1px solid gray;
 }
 .maincontent button {
-  padding: 15px 80px;
+  padding: 15px 5%;
+  color: white;
+  font-weight: 900;
+  width: 200px;
   margin-top: 15px;
   border: 1px solid gray;
-  background-color: azure;
+  background-color: #5adbb5;
+  border-radius: 10px;
+}
+.maincontent button:hover {
+  background-color: #5dbea3;
 }
 .maincontent .result {
-  width: 250px;
-  height: 60px;
-  background-color: #F2F2F2;
+  padding: 15px 80px;
+  background-color: #f2f2f2;
+  text-align: center;
+}
+.maincontent .resultBox {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+}
+.maincontent .border-color-red {
+  border: 2px solid red;
 }
 
 footer {
@@ -91,18 +103,57 @@ footer a {
   }
 }
 @media only screen and (max-width: 530px) {
-  .maincontent input {
-    width: 200px;
+  .maincontent .subjectBox {
+    display: flex;
+    flex-direction: column;
+  }
+  .maincontent .subjectBox .subject input {
+    width: 100%;
+  }
+  .maincontent .subjectBox .subject input:nth-child(3) {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+  }
+  .maincontent .subjectBox .subject input:nth-child(2) {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
   }
 }
 @media only screen and (max-width: 430px) {
-  .maincontent input {
+  .maincontent {
+    padding: 40px 30px;
+  }
+  .maincontent button {
     width: 150px;
   }
+  .result {
+    padding: 10px 60px;
+  }
 }
-@media only screen and (max-width: 320px) {
-  .maincontent input {
-    width: 115px;
+@media only screen and (max-width: 336px) {
+  .result {
+    white-space: nowrap;
+    padding: 15px 25px !important;
+  }
+}
+@media only screen and (max-width: 310px) {
+  .nav .imgdiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .nav img {
+    width: 75%;
+  }
+}
+@media only screen and (max-width: 260px) {
+  .nav .imgdiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .nav img {
+    width: 65%;
   }
 }
 /*#endregion*//*# sourceMappingURL=style.css.map */

@@ -1,137 +1,187 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.dn{
-    display: none;
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.nav{
+.nav {
     height: 80px;
     background-color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-    .imgdiv{
-        
-        
-        img{
-            max-width: 100%;
-            height: auto;
-        }
-    }
+    box-shadow:
+        rgba(0, 0, 0, 0.25) 0px 14px 28px,
+        rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
-.maincontent{
-    height: 769px;
+.maincontent {
+    max-height: 100%;
+    padding: 40px 0px;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    div{
+    .subject {
+        padding-top: 10px;
+    }
+    div {
         margin-top: 10px;
     }
-    select{
+    select {
         width: 80px;
         height: 30px;
+    }
 
-    }
-    .gradeandcredit{
-        div{
-            :last-child{
-                margin-left: 15px;
-            }
-        }
-    }
-    input{
+    input {
         width: 400px;
         height: 45px;
         font-size: 15px;
         padding-left: 5px;
         border-radius: 8px;
         border: 1px solid gray;
-    
     }
-    button{
-        padding: 15px 80px;
+    button {
+        padding: 15px 5%;
+        color: white;
+        font-weight: 900;
+        width: 200px;
         margin-top: 15px;
         border: 1px solid gray;
-        background-color: azure;
+        background-color: #5adbb5;
+        border-radius: 10px;
+        &:hover {
+            background-color: #5dbea3;
+        }
     }
-    .result{
-        width: 250px;
-        height: 60px;
-        background-color: #F2F2F2;
+    .result {
+        padding: 15px 80px;
+        background-color: #f2f2f2;
+        text-align: center;
+    }
+    .resultBox {
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-direction: column;
+    }
+
+    .border-color-red {
+        border: 2px solid red;
     }
 }
 
 footer {
-    background-color: #333; 
-    color: #fff; 
+    background-color: #333;
+    color: #fff;
     text-align: center;
     padding: 30px 0;
     width: 100%;
     font-size: 18px;
-    a{
+    a {
         color: #ffff;
     }
 }
 
 /*#region Responsive*/
 
-
-@media only screen and (max-width:865px){
-    .maincontent{
-        input{
+@media only screen and (max-width: 865px) {
+    .maincontent {
+        input {
             width: 350px;
         }
     }
 }
 
-@media only screen and (max-width:740px){
-    .maincontent{
-        input{
+@media only screen and (max-width: 740px) {
+    .maincontent {
+        input {
             width: 300px;
         }
     }
 }
 
-@media only screen and (max-width:640px){
-    .maincontent{
-        input{
+@media only screen and (max-width: 640px) {
+    .maincontent {
+        input {
             width: 250px;
         }
     }
 }
 
-@media only screen and (max-width:530px){
-    .maincontent{
-        input{
-            width: 200px;
+@media only screen and (max-width: 530px) {
+    .maincontent {
+        .subjectBox {
+            display: flex;
+            flex-direction: column;
+            .subject {
+                input {
+                    width: 100%;
+                    &:nth-child(3) {
+                        border-top-left-radius: 0px;
+                        border-top-right-radius: 0px;
+                    }
+                    &:nth-child(2) {
+                        border-bottom-left-radius: 0px;
+                        border-bottom-right-radius: 0px;
+                    }
+                }
+            }
         }
     }
 }
 
-@media only screen and (max-width:430px){
-    .maincontent{
-        input{
+@media only screen and (max-width: 430px) {
+    .maincontent {
+        padding: 40px 30px;
+
+        button {
             width: 150px;
         }
     }
+    .result {
+        padding: 10px 60px;
+    }
 }
 
-@media only screen and (max-width:320px){
-    .maincontent{
-        input{
-            width: 115px;
+@media only screen and (max-width: 336px) {
+    .result {
+        white-space: nowrap;
+        padding: 15px 25px !important;
+    }
+}
+
+@media only screen and (max-width: 310px) {
+    .nav {
+        .imgdiv {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        img {
+            width: 75%;
         }
     }
 }
+
+@media only screen and (max-width: 260px) {
+    .nav {
+        .imgdiv {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        img {
+            width: 65%;
+        }
+    }
+}
+
 /*#endregion*/
